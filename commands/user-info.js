@@ -3,8 +3,8 @@ const { SlashCommandBuilder, EmbedBuilder } = require('discord.js')
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('user-info')
-        .setDescription('Replies with the user\'s information')
-        .addUserOption(option => option.setName('user').setDescription('The user\'s information you want to see')),
+        .setDescription('查看用戶資訊')
+        .addUserOption(option => option.setName('user').setDescription('請選擇你要查看的用戶')),
         
     async execute(client, interaction) {
         const user = interaction.options.getUser('user') || interaction.user
