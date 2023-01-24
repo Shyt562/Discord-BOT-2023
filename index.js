@@ -8,7 +8,7 @@ const client = new Client({
 })
 
 client.on(Events.ClientReady, c => {
-    console.log(`[SUCCESS] Logged in as ${c.user.tag}`)
+    console.log(`[SUCCESS] 您的 ${c.user.tag} 已上線!`)
     const { deployCmd } = require('./modules/deploy.js')
     deployCmd()
 })
