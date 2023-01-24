@@ -3,7 +3,7 @@ const { SlashCommandBuilder, EmbedBuilder } = require('discord.js')
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('choose')
-        .setDescription('Choose between multiple options')
+        .setDescription('在多個選項之間進行選擇')
         .addStringOption(option => option.setName('title').setDescription('主題').setRequired(true))
         .addStringOption(option => option.setName('options').setDescription('選項, 使用英文逗號以分隔').setRequired(true)),
 
