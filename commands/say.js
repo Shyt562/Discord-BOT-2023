@@ -3,13 +3,13 @@ const { SlashCommandBuilder, EmbedBuilder } = require('discord.js')
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('say')
-        .setDescription('Make the bot say something')
-        .addStringOption(option => option.setName('content').setDescription('The content to say').setRequired(true)),
+        .setDescription('讓機器人說話')
+        .addStringOption(option => option.setName('content').setDescription('輸入要說的話').setRequired(true)),
 
     async execute(client, interaction) {
         const content = interaction.options.getString('content')
 
-        if (!content) return interaction.reply({ content: 'Please enter some content to say', ephemeral: true })
+        if (!content) return interaction.reply({ content: '請輸入一些要說的話', ephemeral: true })
 
         channel = interaction.channel
 
@@ -21,7 +21,7 @@ module.exports = {
             await interaction.reply({ embeds: [embed], ephemeral: true})
             await channel.send(content)
         } catch (err) {
-            await interaction.reply({ content: 'I was unable to send the message', ephemeral: true })
+            await interaction.reply({ content: '我無法發送消息', ephemeral: true })
         }
     }
 }
