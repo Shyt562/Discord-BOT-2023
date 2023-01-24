@@ -3,18 +3,18 @@ const { SlashCommandBuilder, EmbedBuilder } = require('discord.js')
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('translate')
-        .setDescription('Translate a text')
+        .setDescription('翻譯文字')
         .addStringOption(option =>
             option.setName('text')
-                .setDescription('The text to translate')
+                .setDescription('要翻譯的文字')
                 .setRequired(true))
         .addStringOption(option =>
             option.setName('from')
-                .setDescription('The language to translate from')
+                .setDescription('要翻譯的語言')
                 .setRequired(true))
         .addStringOption(option =>
             option.setName('to')
-                .setDescription('The language to translate to')
+                .setDescription('要翻譯成的語言')
                 .setRequired(true)),
 
     async execute(client, interaction) {
@@ -27,7 +27,7 @@ module.exports = {
         try {
             var result = await translate(text, { from: fromlang, to: tolang})
         } catch (error) {
-            interaction.reply({ content: 'Cannot translate the text', ephemeral: true })
+            interaction.reply({ content: '我無法翻譯這個文字', ephemeral: true })
             console.log(error)
             return
         }
