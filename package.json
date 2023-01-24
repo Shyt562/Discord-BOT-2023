@@ -4,5 +4,12 @@
     "discord.js": "^14.7.1",
     "mathjs": "^11.5.0",
     "uuid": "^9.0.0"
+    },
+  
+    "scripts": {
+    "start": "node index",
+  },
+  
   }
 }
+
