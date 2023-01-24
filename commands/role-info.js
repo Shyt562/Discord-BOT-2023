@@ -3,8 +3,8 @@ const { SlashCommandBuilder, EmbedBuilder } = require('discord.js')
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('role-info')
-        .setDescription('Replies with the role\'s information')
-        .addRoleOption(option => option.setName('role').setDescription('The role\'s information you want to see')),
+        .setDescription('查看身分組資訊')
+        .addRoleOption(option => option.setName('role').setDescription('選擇你想查看的身分組')),
     async execute(client, interaction) {
         const role = interaction.options.getRole('role')
 
